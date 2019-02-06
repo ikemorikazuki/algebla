@@ -1,0 +1,127 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+
+\usepackage{tcolorbox}
+\begin{document}
+\begin{tcolorbox}[colframe=black!50,colback=white,colbacktitle=black!50,coltitle=white,fonttitle=\bfseries\sffamily,title=問題１]
+$6^{110}を19で割った時の剰余を求めよ$
+\end{tcolorbox}
+\begin{description}
+  \item[解答] \mbox{} \\
+  19を法とする。\\
+  $6^{110} = (36)^{55} = (38 - 2)^{55} = 2^{55} = 17$
+\end{description}
+
+\begin{tcolorbox}[colframe=black!50,colback=white,colbacktitle=black!50,coltitle=white,fonttitle=\bfseries\sffamily,title=問題2.1]
+$集合Gと,G上の演算 \cdot の組(G, \cdot )が群であることの定義をかけ$
+\end{tcolorbox}
+\begin{description}
+  \item[解答]
+\end{description}
+
+\begin{tcolorbox}[colframe=black!50,colback=white,colbacktitle=black!50,coltitle=white,fonttitle=\bfseries\sffamily,title=問題2.２]
+$実数係数の正則な 2 \times 2 行列全体を \bm{GL}(2, \mathbb{R})とかく. \ これは行列の積に関して群になることを確認せよ$
+\end{tcolorbox}
+
+\begin{description}
+  \item[解答] \mbox{} \\
+  \begin{enumerate}
+    \item $\forall A \in \bm{GL}(2,\mathbb{R})に対して、A \cdot I = I \cdot A = A. \ よって、I \in \bm{GL}(2, \mathbb{R})は単位元.$
+
+    \item $\forall A \in \bm{GL}(2,\mathbb{R})に対して、Aは正則行列なので逆行列 A^{-1}が存在する。よって、A \cdot A^{-1} = A^{-1} \cdot A = I. \ よって逆元が存在する.$
+
+    \item  結合法則は行列の積から明らか.
+  \end{enumerate}
+  $以上から、\bm{GL}(2,\mathbb{R})は行列の積に関して群.$
+\end{description}
+
+\begin{tcolorbox}[colframe=black!50,colback=white,colbacktitle=black!50,coltitle=white,fonttitle=\bfseries\sffamily,title=問題2.3]
+$(\mathbb{Z}, +)の部分集合として、偶数全体2\mathbb{Z}を考えると、これは部分群になることをし示せ. \ また、奇数全体を考えると、部分群にならないことを示せ$
+\end{tcolorbox}
+
+\begin{description}
+  \item[解答] \mbox{} \\
+  \begin{enumerate}
+    \item $ 2 \ | \ 0 より 0 \in 2 \mathbb{Z}.(単位元の存在)$
+    \item $ 2m \in 2 \mathbb{Z}に対して、-2m \in 2\mathbb{Z}. \ (逆元について閉じている)$
+    \item $\forall 2m, 2n \in 2\mathbb{Z}に対して、2m + 2n = 2(m+n) \ \in 2\mathbb{Z}.(積について閉じている)$
+  \end{enumerate}
+  以上から、$2\mathbb{Z}は\mathbb{Z}の部分群$ \\
+  $奇数全体の集合は1+1 = 2 となり、積について閉じていないので部分群ではない$
+
+\end{description}
+
+\begin{tcolorbox}[colframe=black!50,colback=white,colbacktitle=black!50,coltitle=white,fonttitle=\bfseries\sffamily,title=問題3.1]
+$ X_n を集合 \{1,2,3, \dots , n\}上の全単射全体とし、\circ を写像の合成とすると、(X_n, \circ)は群になる。これをn次対称群と呼び\mathfrak{S}_nと書く.$\\
+$\mathfrak{S}_3について、以下の問いに答えよ$
+\begin{enumerate}
+  \item $\mathfrak{S}_nが群になることを確認せよ$
+  \item $群の元を列挙せよ$
+  \item $(1 \ 2)によって生成される部分群を求めよ. \ また、その部分群の位数を求めよ$
+  \item $部分群< (1 \ 2 \ 3) >を求めよ.また(1 \ 2 \ 3)の位数を求めよ$
+  \item $\mathfrak{S}_nの生成元を求めよ$
+\end{enumerate}
+\end{tcolorbox}
+\begin{description}
+  \item[解答] \mbox{} \\
+  \begin{enumerate}
+    \item $\mathfrak{S}_nが群になることについて$
+    \begin{enumerate}
+      \item $ id \in \mathfrak{S}_nは、\forall \sigma \in \mathfrak{S}_n に対して、id \circ \sigma = \sigma \circ id = \sigma.よって、idは単位元.$
+      \item $ \forall \sigma \in \mathfrak{S}_nに対して、\sigma は全単射写像なので逆写像 \sigma ^{-1} \in \mathfrak{S}_n が存在し、\sigma \circ \sigma ^{-1} = \sigma ^{-1} \circ \sigma = id. よって、\mathfrak{S}_nの任意の元に対して、逆元が存在する$
+      \item $\forall \sigma , \tau , \psi \in \mathfrak{S}_nに対して、\forall m \in X_nに対して、((\sigma \circ \tau) \circ \psi)(m) = (\sigma \circ \tau)(\psi (m)) = (\sigma (\tau (\psi (m)))) = \sigma ((\tau \circ \psi)(m)) = (\sigma \circ (\tau \circ \psi))(m).よって、結合法則が成り立つ$
+    \end{enumerate}
+    $以上から、\mathfrak{S}_nは群$
+
+    \item $\mathfrak{S}_3の元は 1, (1 \ 2), (1 \ 3), (2 \ 3),(1 \ 2 \ 3),(1 \ 3 \ 2)$
+
+    \item $互換(1 \ 2)によって生成される巡回群は\{ 1 , (1 \ 2) \}$
+
+    \item $(1 \ 2 \ 3)から生成される巡回群は \{ 1 , (1 \ 2 \ 3), (1 \ 3 \ 2) \}.また、(1 \ 2 \ 3)の位数は3.$
+
+    \item $生成元は一例として、\mathfrak{S}_nに含まれる全ての互換など$
+
+  \end{enumerate}
+
+\end{description}
+
+\begin{tcolorbox}[colframe=black!50,colback=white,colbacktitle=black!50,coltitle=white,fonttitle=\bfseries\sffamily,title=問題4]
+$G = (\mathbb{Z}, +), Gの部分群 H = (3\mathbb{Z}, +)とし、以下の問いに答えよ。ただし 3\mathbb{Z} = \{ 3n \mid n \in \mathbb{Z} \}$
+\begin{enumerate}
+  \item 以下の左剰余類を求めよ
+  \begin{itemize}
+    \item $\overline{0} = 0 + H$
+    \item $\overline{1} = 1+ H$
+    \item $\overline{2} = 2 + H$
+    \item $\overline{-1} = (-1) + H$
+    \item $\overline{-2} = (-2) + H$
+  \end{itemize}
+  \item $集合G/Hを求めよ。また、GにおけるHの指数[G \ ; \ H]を求めよ$
+  \item $Gが可換群であるため、その部分群Hは常に正規部分群であり、剰余類\overline{a} \cdot \overline{b} = \overline{ab}で籍を定めることができる。$\\
+  $\overline{1} + \overline{2}を求めよ.$
+  \item $剰余群G/Hの群表をかけ$
+\end{enumerate}
+\end{tcolorbox}
+\begin{description}
+  \item[解答] \mbox{} \\
+  \begin{enumerate}
+    \item
+    \begin{itemize}
+      \item $\overline{0} = \{ 3n \mid n \in \mathbb{Z} \}$
+      \item $\overline{1} = \{ 3n+1 \mid n \in \mathbb{Z} \}$
+      \item $\overline{2} = \{ 3n+2 \mid n \in \mathbb{Z} \}$
+      \item $\overline{-1} = \{ 3n-1 \mid n \in \mathbb{Z} \} = \{ 3(n-1) + 2 \mid n \in \mathbb{Z} \} = \{ 3n + 2 \mid n \in \mathbb{Z} \}$
+      \item $\overline{-2} = \{ 3n-2 \mid n \in \mathbb{Z} \} = \{ 3(n-1) + 1 \mid n \in \mathbb{Z} \} = \{ 3n + 1 \mid n \in \mathbb{Z} \}$
+    \end{itemize}
+
+    \item $(1)より、G/H = \{ \overline{0}, \ \overline{1} ,\ \overline{2} \}$
+
+    \item $\overline{1} + \overline{2} = \overline{1+2} = \overline{3} = \overline{0}$
+
+    \item 略
+
+  \end{enumerate}
+\end{description}
+\end{document}

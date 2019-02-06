@@ -1,0 +1,177 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+
+\usepackage{tcolorbox}
+\begin{document}
+\begin{tcolorbox}[colframe=black!50,colback=white,colbacktitle=black!50,coltitle=white,fonttitle=\bfseries\sffamily,title=問題１]
+$Gを群、Hをその部分群とし、Gの元の同値関係a \sim bをa^{-1}b \in Hで定義する$
+\begin{enumerate}
+  \item $a \sim bが同値関係であることを示せ$
+  \item $Gの元aのHによる左剰余類 \overline{a}はaH = \{ah \mid h \in H \}に一致することを示せ$
+\end{enumerate}
+\end{tcolorbox}
+
+
+\begin{description}
+  \item[解答] \mbox{}
+  \begin{enumerate}
+    \item
+    \begin{enumerate}
+      \item (対称律) \\
+      $\forall a \in Hに対して、a^{-1}a = 1 \in H.よって、a \sim a.$
+      \item (反射律)\\
+      $ a \sim b に対して、a^{-1}b \in H であり a^{-1}b の逆元(a^{-1}b)^{-1} = b^{-1}a \in H.(Hは群であるから、逆元について閉じている). \ よって b \sim a.$
+      \item (推移律) \\
+      $ a \sim b, b \sim cに対して、a^{-1}c = a^{-1}bb^{-1}c  \in H.(\because a^{-1}b, b^{-1}c \in H).$\\
+      $よって,a \sim c $
+    \end{enumerate}
+    $以上より, \sim は同値関係$
+
+    \item $\overline{a} = \{x \in G \mid a^{-1}x \in H \} と定める$\\
+    $以下、\overline{a} = aH,を示す$
+    \begin{itemize}
+      \item $\overline{a} \subset aHについて$ \\
+      $ \forall x \in \overline{a}に対して、x = 1 \cdot x = a \cdot (a^{-1}x) \in aH. \ \ (\because a^{-1}x \in H)$
+      \item $aH \subset \overline{a}について$　\\
+      $\forall ah \in aHに対して、a^{-1}(ah) = h \in H. \ よって、ah \in \overline{a} $
+    \end{itemize}
+    $以上から、\overline{a} = aH$
+  \end{enumerate}
+
+\end{description}
+
+
+\begin{tcolorbox}[colframe=black!50,colback=white,colbacktitle=black!50,coltitle=white,fonttitle=\bfseries\sffamily,title=問題2]
+  $群Gの部分群Hに関して、以下の問いに答えよ$
+  \begin{enumerate}
+    \item $HがGの正規部分群であることの定義をかけ。また、アーベル群の部分群は常に正規部分群出ることを示せ。$
+    \item $HがGの正規部分群のとき、左剰余集合G/Hは積\overline{a} \cdot \overline{b} = \overline{ab}で群になることを示せ$
+    \item $HがGの正規部分群でなく、上の積がwell-definedにならない例を構成せよ$
+  \end{enumerate}
+
+\end{tcolorbox}
+
+\begin{enumerate}
+  \item $HがGの正規部分群 \Leftrightarrow \forall h \in H, \  \forall g \in G, \  g^{-1}hg \in H.$ \\
+  $Aをアーベル群とし、B \subset AをAの部分群とする.Bもアーベル群となることに注意$\\
+  $\forall a \in A, \forall b \in Bに対して、a^{-1}ba = ba^{-1}a = b \in B.(\because Aはアーベル群)よってBは正規部分群.$
+  \item　
+  \begin{enumerate}
+    \item $まず演算がwell-definedであることを示す$\\
+    $\alpha \in \overline{a}に対して、\exists h_1 \in H \ s.t. \  \alpha = ah_1.$ \ $\beta \in \overline{b}に対して、\exists h_2 \in H \ s.t. \  \beta = bh_2.$\\
+    $\overline{\alpha} \cdot \overline{\beta} = \overline{\alpha \beta} = \overline{ah_1bh_2} = \overline{ab \cdot (b^{-1}h_1bh_2)} = \overline{ab} = \overline{a} \cdot \overline{b}.$\\
+    $(\because Hが正規部分群であるから、b^{-1}h_1b \in H.よって、b^{-1}h_1bh_2 \in H.したがって、\overline{ab \cdot (b^{-1}h_1bh_2)}=\overline{ab})$
+
+    \item G/Hが群であることを示す
+    \begin{enumerate}
+      \item $\forall \ \overline{g} \in G/Hに対して \  \overline{1} \ は、 \ \overline{g} \cdot \overline{1} = \overline{g \cdot 1} = \overline{g}. \ よって、\overline{1}は単位元$
+
+      \item $\forall \  \overline{g} \ \in G/Hに対して、\ \overline{g^{-1}}は、 \ \overline{g} \cdot \overline{g^{-1}} = \overline{g^{-1}} \cdot \overline{g} = \overline{1}. \ よって、\overline{g^{-1}} \ は \ \overline{g} \ の逆元。$
+
+      \item 結合法則はGが群であり、結合法則が成り立つことから明らか
+    \end{enumerate}
+    以上から$G/Hは群$
+
+    \item 略
+  \end{enumerate}
+\end{enumerate}
+
+\begin{tcolorbox}[colframe=black!50,colback=white,colbacktitle=black!50,coltitle=white,fonttitle=\bfseries\sffamily,title=問題3]
+  $G,Hを群とし、\phi: \ G \rightarrow H \ を群の準同型写像とする。また、e_G,e_HをG,Hの単位元とする。以下を示せ$
+  \begin{enumerate}
+    \item $\phi (e_G) = e_H、および \ \phi (a^{-1}) = \phi (a) ^{-1}$
+    \item $Im(\phi)はHの部分群であり、Ker(\phi)はGの正規部分群である$
+    \item $\phi が単射　 \Leftrightarrow Ker(\phi) = {e_H}$
+    \item $群の同型は同値関係である$
+  \end{enumerate}
+\end{tcolorbox}
+
+\begin{description}
+  \item[解答] \mbox{}\\
+  \begin{enumerate}
+    \item $\phi(e_G) = \phi(e_G \cdot e_G) = \phi(e_G) \cdot \phi (e_G). \ 両辺に\phi(e_G)^{-1}をかけると \ \phi(e_G) = e_{H}$\\
+    $\phi(a)^{-1} = \phi(a)^{-1} \cdot 1 = \phi(a)^{-1} \cdot \phi(a \cdot a^{-1}) = \phi(a)^{-1} \cdot \phi(a) \cdot \phi(a^{-1}) = \phi(a^{-1})$
+
+    \item
+    \begin{enumerate}
+      \item
+      \begin{itemize}
+        \item $e_H = \phi(e_G). \ よって、e_H \in Im(\phi). \ (単位元の存在)$
+
+        \item $\forall h \in Im(\phi)に対して、\exists g \in G \ s.t. \ \phi(g) = h. \ \ h^{-1} = \phi(g)^{-1} = \phi(g^{-1}) \in Im(\phi). (逆元について閉じている)$
+
+        \item $\forall h_1, h_2 \in Im(\phi)に対して、\exists g_1,g_2 \in G \ s.t. \ \phi(g_1) = h_2, \phi(g_2) = h_2.$ \\
+        $ h_1h_2 = \phi(g_1)\phi(g_2) = \phi(g_1g_2) \in Im(\phi)$
+      \end{itemize}
+      以上から、$Im(\phi)はHの部分群$
+
+      \item
+      \begin{itemize}
+        \item $\phi(e_G) = e_Hより、e_G \in Ker(\phi). \ (単位元の存在)$
+
+        \item $\forall g \in Ker(\phi)に対して、\phi(g^{-1}) = \phi(g)^{-1} = e_H^{-1} = e_H. \ よって、g^{-1} \in Ker(\phi). \ (逆元について閉じている)$
+
+        \item $\forall g_1, g_2 \in Ker(\phi )に対して、\phi(g_1 g_2) = \phi(g_1) \phi(g_2) = e_H \cdot e_H = e_{H}. \ よって、g_{1} g_2 \in Ker(\phi). \ (積について閉じている)$
+      \end{itemize}
+      $以上から、Ker(\phi)はGの部分群$
+    \end{enumerate}
+
+
+    \item
+    \begin{enumerate}
+      \item $ \Rightarrow \ \ は明らか$
+
+      \item $\Leftarrow$\\
+      $\phi(a) = \phi(b) \ \Leftrightarrow \ \phi(a)\phi(b)^{-1} = e_H \Leftrightarrow \ \phi(ab^{-1}) = e_H. \ Ker(\phi) = {e_H}より、ab^{-1} = e_H,よってa = b. \ \ したがって、\phi は単射$
+
+    \end{enumerate}
+    \item 略
+  \end{enumerate}
+\end{description}
+
+
+\begin{tcolorbox}[colframe=black!50,colback=white,colbacktitle=black!50,coltitle=white,fonttitle=\bfseries\sffamily,title=問題4]
+$\mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}と\mathbb{Z}/6\mathbb{Z}は同型であることを、準同型定理を使って示したい$
+\begin{enumerate}
+  \item $\mathbb{Z}から\mathbb{Z} / 3\mathbb{Z} \times \mathbb{Z} / 2\mathbb{Z}への写像 \phi を以下で定める。\phi　が準同型になることを示せ$\\
+  $\phi(n) = ([nを３で割ったあまり], \ [nを２で割った余り]) = ([n],[n])$
+  \item $\phi　の全射性を示せ$
+  \item $\phi の核Ker(\phi)を求め、準同型定理によって同型を示せ$
+\end{enumerate}
+\end{tcolorbox}
+\begin{description}
+  \item[解答]　\mbox{} \\
+  \begin{enumerate}
+    \item $\forall m,n \in \mathbb{Z}に対して、\phi(m) + \phi(n) = ([m],[m]) + ([n],[n]) = ([m]+[n],[m]+[n]) = ([m+n],[m+n]) = \phi(m+n).よって準同型$
+
+    \item $\forall ([m],[n])\in \mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}に対して、\phi(6k+4m+3n)=([4m],[3n])=([m],[n]). \ \ よって、\phi は全射.$
+
+    \item
+    \begin{itemize}
+      \item $Ker(\phi) = 6\mathbb{Z}を示す$
+      \begin{enumerate}
+        \item $Ker(\phi) \subset 6\mathbb{Z}について$\\
+        $\forall m \in Ker(\phi)に対して、\phi(m) = ([m], [n]) = ([0],[0])より、mは3の倍数かつ2の倍数. \ よって、mは6の倍数. \ したがって、m \in 6\mathbb{Z}$
+
+        \item $6\mathbb{Z} \subset Ker(\phi)について$\\
+        $\forall 6m \in \mathbb{Z}に対して、\phi(6m) = ([6m],[6m]) = ([0],[0]).よって、6m \in Ker(\phi).$
+      \end{enumerate}
+
+      \item $準同型定理より、\mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z} \cong \mathbb{Z}/6\mathbb{Z}$
+    \end{itemize}
+  \end{enumerate}
+\end{description}
+
+
+\begin{tcolorbox}[colframe=black!50,colback=white,colbacktitle=black!50,coltitle=white,fonttitle=\bfseries\sffamily,title=問題5]
+位数がそれぞれ3,4,5,6であるようなアーベル群を(同型なものは同じものとして)全て列挙せよ
+\end{tcolorbox}
+
+\begin{description}
+  \item[解答]　\mbox{}\\
+  略
+\end{description}
+
+\end{document}
